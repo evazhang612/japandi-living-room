@@ -1,0 +1,176 @@
+:root {
+  --bg: #faf6ef;
+  --ink: #2c2416;
+  --muted: #6b5a3c;
+  --line: #e5ddcc;
+  --accent: #a8896b;
+  --card: #fffdf8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-weight: 300;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+em { font-style: italic; color: var(--muted); }
+
+/* Hero */
+.hero {
+  min-height: 78vh;
+  padding: 48px 40px;
+  display: flex;
+  align-items: flex-end;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(168,137,107,0.12), transparent 60%),
+    linear-gradient(180deg, #f5ece0 0%, #faf6ef 100%);
+  border-bottom: 1px solid var(--line);
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-size: clamp(42px, 7vw, 88px);
+  line-height: 1.02;
+  margin-bottom: 24px;
+}
+.sub { color: var(--muted); font-size: 16px; margin-bottom: 28px; }
+.chips { display: flex; gap: 10px; flex-wrap: wrap; }
+.chip {
+  border: 1px solid var(--line);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--muted);
+  background: rgba(255,255,255,0.5);
+}
+
+/* Sections */
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 96px 40px;
+  border-bottom: 1px solid var(--line);
+}
+.section-head { margin-bottom: 48px; max-width: 640px; }
+.num {
+  display: inline-block;
+  font-family: 'Fraunces', serif;
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  margin-bottom: 12px;
+}
+.section h2 {
+  font-size: clamp(32px, 4.5vw, 52px);
+  margin-bottom: 14px;
+}
+.lede { color: var(--muted); font-size: 16px; }
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 28px 24px 22px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  min-height: 220px;
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px -18px rgba(44,36,22,0.25);
+}
+.card.featured {
+  background: linear-gradient(180deg, #f5ece0 0%, #fffdf8 100%);
+  border-color: var(--accent);
+}
+.card-tag {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.card h3 { font-size: 22px; margin-bottom: 10px; }
+.card p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+.card-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.price { font-size: 13px; color: var(--ink); }
+.cta { font-size: 13px; color: var(--accent); }
+
+/* Layouts */
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+@media (min-width: 900px) {
+  .layout-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+}
+.layout {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px;
+}
+.layout figcaption { margin-bottom: 18px; }
+.layout h3 { font-size: 20px; margin-bottom: 6px; }
+.layout figcaption p { color: var(--muted); font-size: 13px; }
+.layout svg { width: 100%; height: auto; display: block; }
+
+/* Palette */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+.sw {
+  aspect-ratio: 1 / 1.15;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--ink);
+}
+.sw span { font-family: 'Fraunces', serif; font-size: 18px; }
+.sw small { font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.15em; margin-top: 2px; }
+
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
